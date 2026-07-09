@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: windows-2022
 
     steps:
     - name: Checkout code
@@ -16,9 +16,14 @@ jobs:
       uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
-        # Keep CI on the latest Flutter version supported by this legacy codebase.
-        # Newer stable releases use Dart 3+ and Flutter API changes that break these pinned dependencies.
-        flutter-version: '3.19.0'
+        # Keep this legacy app on Flutter 3.3.9. The Dart/Flutter/Fluent UI
+        # APIs used by the current codebase predate the later Dart 3 and
+        # fluent_ui 4.x breaking changes. The job still uses windows-2022 so
+        # the hosted runner provides Visual Studio 2022 for the Windows build.
+        flutter-version: '3.3.9'
+
+    - name: Clean generated build state
+      run: flutter clean
 
     - name: Install dependencies
       run: flutter pub get
