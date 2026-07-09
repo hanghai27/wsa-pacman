@@ -6,22 +6,21 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  # This codebase is currently validated against Flutter 3.19 / Dart 3.3.
+  # This codebase currently targets Flutter 3.3.9 / Dart 2.18.
   # Newer Flutter/Dart releases remove APIs still used by the legacy Fluent
-  # widgets and generated localization imports.
-  sdk: '>=3.3.0 <3.4.0'
-  flutter: '>=3.19.0 <3.20.0'
+  # widgets, generated localization imports, and Windows FFI helpers.
+  sdk: '>=2.17.0 <3.0.0'
+  flutter: '>=3.0.0 <3.3.10'
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  # fluent_ui 4.8.0+ removes ButtonStyle.border, and 4.9.0+ removes
-  # ButtonState/ButtonStates, both of which are still used by the custom
-  # Fluent widgets in lib/widget and lib/main.dart. Keep this below 4.8.0
-  # while still allowing the intl-compatible 4.5.1+ releases.
-  fluent_ui: '>=4.5.1 <4.8.0'
+  # The app's custom Fluent widgets still use Fluent UI 3.x APIs such as
+  # ThemeData, ComboboxItem, NavigationBody, and DefaultFluentLocalizations.
+  # Keep this on 3.12.0 until those widgets are migrated to fluent_ui 4.x.
+  fluent_ui: 3.12.0
     #git: https://github.com/bdlukaa/fluent_ui.git
   shared_value: ^2.1.2
   synchronized: ^3.0.0
