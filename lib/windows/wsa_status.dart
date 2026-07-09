@@ -1,5 +1,7 @@
 // ignore_for_file: non_constant_identifier_names
 
+import 'dart:developer';
+
 import 'package:ffi/ffi.dart';
 import 'package:win32/win32.dart';
 import 'package:wsa_pacman/windows/nt_io.dart';
