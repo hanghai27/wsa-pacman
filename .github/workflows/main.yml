@@ -16,6 +16,9 @@ jobs:
       uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
+        # Keep CI on the latest Flutter version supported by this legacy codebase.
+        # Newer stable releases use Dart 3+ and Flutter API changes that break these pinned dependencies.
+        flutter-version: '3.3.9'
 
     - name: Install dependencies
       run: flutter pub get
