@@ -14,9 +14,9 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  fluent_ui: ^4.12.0
+  fluent_ui: ^4.15.1
     #git: https://github.com/bdlukaa/fluent_ui.git
-  shared_value: ^2.1.2
+  bdaya_shared_value: ^5.0.0
   synchronized: ^3.1.1
   provider: ^6.4.0
   # system_theme 2.0.0 downloads/extracts Windows C++ sources during the build,
@@ -31,17 +31,17 @@ dependencies:
       ref: master
   smooth_scroll_multiplatform:
     git: https://github.com/alesimula/dyn_mouse_scroll.git
-  url_strategy: ^0.2.0
+  url_strategy: ^0.3.0
   yaml: ^3.1.2
   #transparent_pointer: ^1.0.0
-  archive: ^3.4.0
+  archive: ^4.0.0
     #git: https://github.com/brendan-duncan/archive.git
   #flutter_svg: ^0.23.0+1
   jovial_svg:
     git: https://github.com/alesimula/jovial_svg.git
   protobuf: ^3.1.0
   #path_provider: ^2.0.6
-  mdi: ^6.0.0
+  mdi: ^5.0.0-nullsafety.0
   win32: ^5.0.0
   base32: ^2.1.1
   charset: ^0.1.1
