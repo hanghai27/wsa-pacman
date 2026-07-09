@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: windows-2022
 
     steps:
     - name: Checkout code
@@ -16,11 +16,13 @@ jobs:
       uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
-        # Do not pin to Flutter 3.19 here: that toolchain can select the
-        # Visual Studio 16 2019 CMake generator, but GitHub's supported
-        # Windows images no longer provide Visual Studio 2019.
-        # Use the current stable Flutter toolchain so Windows builds target
-        # the Visual Studio version installed on the hosted runner.
+        # Keep this legacy app on Flutter 3.19. Newer stable Flutter/Dart
+        # releases remove APIs used by this codebase and disable the
+        # synthetic flutter_gen package expected by the current l10n imports.
+        # The job uses windows-2022 so Flutter 3.19 can target Visual Studio
+        # 2022 instead of encountering the VS 2026/VS 2019 generator mismatch
+        # seen on windows-latest.
+        flutter-version: '3.19.0'
 
     - name: Clean generated build state
       run: flutter clean

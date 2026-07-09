@@ -6,8 +6,11 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
-  flutter: '>=3.10.0 <4.0.0'
+  # This codebase is currently validated against Flutter 3.19 / Dart 3.3.
+  # Newer Flutter/Dart releases remove APIs still used by the legacy Fluent
+  # widgets and generated localization imports.
+  sdk: '>=3.3.0 <3.4.0'
+  flutter: '>=3.19.0 <3.20.0'
 
 dependencies:
   flutter:
