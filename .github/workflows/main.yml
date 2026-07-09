@@ -25,6 +25,9 @@ jobs:
     - name: Clean generated build state
       run: flutter clean
 
+    - name: Clean generated build state
+      run: flutter clean
+
     - name: Install dependencies
       run: flutter pub get
 
