@@ -6,6 +6,9 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
+  # This codebase currently targets Flutter 3.3.9 / Dart 2.18.
+  # Newer Flutter/Dart releases remove APIs still used by the legacy Fluent
+  # widgets, generated localization imports, and Windows FFI helpers.
   sdk: '>=2.17.0 <3.0.0'
   flutter: '>=3.0.0 <3.3.10'
 
@@ -14,12 +17,18 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  # The app's custom Fluent widgets still use Fluent UI 3.x APIs such as
+  # ThemeData, ComboboxItem, NavigationBody, and DefaultFluentLocalizations.
+  # Keep this on 3.12.0 until those widgets are migrated to fluent_ui 4.x.
   fluent_ui: 3.12.0
     #git: https://github.com/bdlukaa/fluent_ui.git
   shared_value: ^2.1.2
   synchronized: ^3.0.0
   provider: ^6.0.0
-  system_theme: 2.0.0
+  # system_theme 2.0.0 downloads/extracts Windows C++ sources during the build,
+  # which fails with newer Visual Studio/CMake on GitHub Actions. Version 2.1.0
+  # bundles the Windows source with the package while keeping the pre-2.3 API used here.
+  system_theme: 2.1.0
   bitsdojo_window:
     git:
       # Credits to bufan22 for fixing errors with new Windows versions

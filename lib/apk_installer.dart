@@ -257,6 +257,6 @@ class _ApkInstallerState extends State<ApkInstaller> {
         default: return [] as List<Widget> ;
         }})(),
       ),
-    )));
+    ));
   }
 }
