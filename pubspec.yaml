@@ -18,7 +18,7 @@ dependencies:
     #git: https://github.com/bdlukaa/fluent_ui.git
   bdaya_shared_value: ^5.0.0
   synchronized: ^3.1.1
-  provider: ^6.4.0
+  provider: ^6.1.5+1
   # system_theme 2.0.0 downloads/extracts Windows C++ sources during the build,
   # which fails with newer Visual Studio/CMake on GitHub Actions. Version 2.1.0
   # bundles the Windows source with the package while keeping the pre-2.3 API used here.
